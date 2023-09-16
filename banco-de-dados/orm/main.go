@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -19,13 +21,13 @@ func main() {
 		panic("failed to connect database")
 	}
 
-	// db.AutoMigrate(&Product{})
+	db.AutoMigrate(&Product{})
 
-	/*/create
-	// db.Create(&Product{
-	// 	Name:  "Teste",
-	// 	Price: 1000,
-	// })
+	//create
+	db.Create(&Product{
+		Name:  "Teste",
+		Price: 1000,
+	})
 
 	//create batch
 	db.Create(&[]Product{
@@ -91,6 +93,6 @@ func main() {
 			return
 		}
 		fmt.Printf("Produto deletado com sucesso: %v\n", productToDelete)
-	} */
+	}
 
 }
