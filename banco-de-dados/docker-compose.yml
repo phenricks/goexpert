@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mysql:
+    image: mysql
+    container_name: mysql
+    restart: always
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nfsociety
+      MYSQL_PASSWORD: admin
+    ports:
+      - 3306:3306
+
+# run docker-compose exec mysql bash and use
+# mysql -u root -p nfsociety
